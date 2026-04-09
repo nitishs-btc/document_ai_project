@@ -1,30 +1,41 @@
-from doctr.io import DocumentFile
-from doctr.models import ocr_predictor
+import cv2
+import pytesseract
 
-ocr_model = ocr_predictor(pretrained=True)
 
 def run_ocr(image_path):
-    doc = DocumentFile.from_images(image_path)
-    result = ocr_model(doc)
+    img = cv2.imread(image_path)
+    h, w, _ = img.shape
 
-    words = []
+    # Better OCR config
+    custom_config = r'--oem 3 --psm 6'
 
-    for page in result.pages:
-        h, w = page.dimensions
+    data = pytesseract.image_to_data(
+        img,
+        config=custom_config,
+        output_type=pytesseract.Output.DICT
+    )
 
-        for block in page.blocks:
-            for line in block.lines:
-                for word in line.words:
-                    (x0, y0), (x1, y1) = word.geometry
+    words_data = []
 
-                    words.append({
-                        "text": word.value,
-                        "bbox": [
-                            int(x0 * w),
-                            int(y0 * h),
-                            int(x1 * w),
-                            int(y1 * h)
-                        ]
-                    })
+    for i in range(len(data['text'])):
+        text = data['text'][i].strip()
 
-    return words
+        if text == "":
+            continue
+
+        x = data['left'][i]
+        y = data['top'][i]
+        width = data['width'][i]
+        height = data['height'][i]
+
+        x0 = x
+        y0 = y
+        x1 = x + width
+        y1 = y + height
+
+        words_data.append({
+            "text": text,
+            "bbox": [x0, y0, x1, y1]
+        })
+
+    return words_data
