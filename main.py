@@ -6,6 +6,7 @@ from src.ocr import run_ocr
 from src.inference import predict
 from src.utils import extract_key_value
 from src.pdf_service import PDFService
+from src.checkbox import map_checkbox_to_text, classify_checkbox, detect_checkboxes
 
 OUTPUT_FOLDER = "output"
 TEMP_IMAGE_FOLDER = "input"
@@ -31,9 +32,20 @@ def process_image(img_path):
         return None
 
     tokens, labels = predict(img_path, words_data)
-    result = extract_key_value(words_data, labels)
 
-    return result
+    # KV extraction
+    form_data = extract_key_value(words_data, labels)
+
+    # ✅ Checkbox detection
+    checkbox_boxes = detect_checkboxes(img_path)
+    checkbox_states = classify_checkbox(img_path, checkbox_boxes)
+    checkbox_results = map_checkbox_to_text(checkbox_states, words_data)
+
+    # ✅ RETURN result (instead of writing to pdf_result)
+    return {
+        "form_data": form_data,
+        "checkboxes": checkbox_results
+    }
 
 
 def process_pdf(pdf_path, pdf_service):

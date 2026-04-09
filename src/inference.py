@@ -1,8 +1,11 @@
 import os
+import json
 import torch
 from PIL import Image
 from transformers import AutoProcessor, AutoModelForTokenClassification
 
+DEBUG_MODEL_DIR = "debug/model"
+os.makedirs(DEBUG_MODEL_DIR, exist_ok=True)
 MODEL_PATH = os.path.abspath("model/final_model")
 
 processor = AutoProcessor.from_pretrained(MODEL_PATH, local_files_only=True)
@@ -57,11 +60,26 @@ def predict(image_path, words_data):
     labels = []
     seen = set()
 
-    # 🔥 FIX: take first token per word
+    debug_output = []
+
     for pred, word_id in zip(predictions, word_ids):
         if word_id is None or word_id in seen:
             continue
-        labels.append(id2label[pred])
+
+        label = id2label[pred]
+        labels.append(label)
+
+        debug_output.append({
+            "text": tokens[word_id],
+            "bbox": boxes[word_id],
+            "label": label
+        })
+
         seen.add(word_id)
+
+    # 🔥 SAVE MODEL OUTPUT
+    filename = os.path.basename(image_path).replace(".png", ".json")
+    with open(os.path.join(DEBUG_MODEL_DIR, filename), "w") as f:
+        json.dump(debug_output, f, indent=2)
 
     return tokens, labels

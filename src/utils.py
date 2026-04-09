@@ -14,9 +14,13 @@ def merge_words_linewise(words_data, labels):
         px0, py0, px1, py1 = prev["bbox"]
         cx0, cy0, cx1, cy1 = bbox
 
-        same_line = abs((py0 + py1)/2 - (cy0 + cy1)/2) < 15
+        same_line = abs((py0 + py1) / 2 - (cy0 + cy1) / 2) < 15
 
-        if same_line and label == prev["label"]:
+        # 🔥 FIX: merge consecutive KEY tokens also
+        if same_line and (
+            label == prev["label"] or
+            (label == "B-KEY" and prev["label"] == "B-KEY")
+        ):
             prev["text"] += " " + text
             prev["bbox"][2] = cx1
         else:
@@ -24,64 +28,163 @@ def merge_words_linewise(words_data, labels):
 
     return merged
 
+
+def _row_height(bbox):
+    return bbox[3] - bbox[1]
+
+
 def extract_key_value(words_data, labels):
 
     merged = merge_words_linewise(words_data, labels)
 
-    keys = [m for m in merged if m["label"] == "B-KEY"]
-    values = [m for m in merged if m["label"] == "B-VALUE"]
-
     result = {}
+    current_section = None
 
-    for key in keys:
+    for i, item in enumerate(merged):
+
+        # =========================
+        # SECTION
+        # =========================
+        if item["label"] == "B-SECTION":
+            current_section = item["text"].strip()
+            if current_section not in result:
+                result[current_section] = {}
+            continue
+
+        if item["label"] != "B-KEY":
+            continue
+
+        key = item
         kx0, ky0, kx1, ky1 = key["bbox"]
         kcx = (kx0 + kx1) / 2
         kcy = (ky0 + ky1) / 2
+        k_height = max(_row_height(key["bbox"]), 12)
 
         best_value = None
-        best_score = float("inf")
 
-        for val in values:
-            vx0, vy0, vx1, vy1 = val["bbox"]
+        # =====================================================
+        # 🚀 1. SAFE ROW MAPPING (STRICT VERSION)
+        # =====================================================
+        above_values = []
+        same_row_keys = []
+
+        for itm in merged:
+            vx0, vy0, vx1, vy1 = itm["bbox"]
             vcx = (vx0 + vx1) / 2
             vcy = (vy0 + vy1) / 2
 
-            dx = vcx - kcx
-            dy = vcy - kcy
+            if itm["label"] == "B-VALUE":
+                if 0 < (ky0 - vy1) < 100:
+                    above_values.append(itm)
 
-            abs_dx = abs(dx)
-            abs_dy = abs(dy)
+            if itm["label"] == "B-KEY":
+                if abs(vcy - kcy) < k_height:
+                    same_row_keys.append(itm)
 
-            score = float("inf")
+        # 🔥 apply ONLY if counts match (important fix)
+        if len(above_values) == len(same_row_keys) and len(above_values) >= 3:
 
-            # ==========================
-            # 1️⃣ RIGHT SIDE (primary)
-            # ==========================
-            if dx > 0 and abs_dy < 20:
-                score = abs_dx
+            above_values.sort(key=lambda x: x["bbox"][0])
+            same_row_keys.sort(key=lambda x: x["bbox"][0])
 
-            # ==========================
-            # 2️⃣ BELOW (stacked layout)
-            # ==========================
-            elif dy > 0 and abs_dx < 150 and abs_dy < 80:
-                score = abs_dx + abs_dy * 2
+            for idx, k in enumerate(same_row_keys):
+                val = above_values[idx]["text"]
 
-            # ==========================
-            # 3️⃣ ABOVE (🔥 FIX FOR YOUR ISSUE)
-            # ==========================
-            elif dy < 0 and abs_dx < 150 and abs_dy < 80:
-                score = abs_dx + abs_dy * 2.5
+                if current_section:
+                    result[current_section][k["text"]] = val
+                else:
+                    result[k["text"]] = val
 
-            # ==========================
-            # 4️⃣ SAME COLUMN (table fix)
-            # ==========================
-            elif abs_dx < 40 and abs_dy < 200:
-                score = abs_dy + abs_dx * 3
+            continue
 
-            if score < best_score:
-                best_score = score
-                best_value = val["text"]
+        # =====================================================
+        # 2. SAME ROW (RELAXED FIX)
+        # =====================================================
+        same_row = []
 
-        result[key["text"]] = best_value if best_value else ""
+        for val in merged:
+            if val["label"] != "B-VALUE":
+                continue
+
+            vx0, vy0, vx1, vy1 = val["bbox"]
+            vcy = (vy0 + vy1) / 2
+
+            if abs(vcy - kcy) < k_height:
+                dx = vx0 - kx1
+
+                if dx >= 0 and dx < 400:   # 🔥 relaxed
+                    same_row.append((dx, val))
+
+        if same_row:
+            same_row.sort(key=lambda x: x[0])
+            best_value = same_row[0][1]["text"]
+
+        # =====================================================
+        # 3. ABOVE (COLUMN OVERLAP FIX)
+        # =====================================================
+        if not best_value:
+
+            best_overlap = 0
+            best_val = None
+
+            for val in merged:
+                if val["label"] != "B-VALUE":
+                    continue
+
+                vx0, vy0, vx1, vy1 = val["bbox"]
+
+                # must be above
+                if not (0 < (ky0 - vy1) < 150):
+                    continue
+
+                # overlap instead of center distance
+                overlap = min(kx1, vx1) - max(kx0, vx0)
+
+                if overlap > best_overlap:
+                    best_overlap = overlap
+                    best_val = val["text"]
+
+            if best_val:
+                best_value = best_val
+
+        # =====================================================
+        # 4. BELOW (MULTI-LINE SAFE)
+        # =====================================================
+        if not best_value:
+            collected = []
+
+            for j in range(i + 1, len(merged)):
+                nxt = merged[j]
+
+                if nxt["label"] == "B-KEY":
+                    break
+
+                if nxt["label"] not in ["B-VALUE", "O"]:
+                    continue
+
+                vx0, vy0, vx1, vy1 = nxt["bbox"]
+
+                if vy0 <= ky1:
+                    continue
+
+                text = nxt["text"].strip()
+                if len(text) < 2:
+                    continue
+
+                collected.append((vy0, text))
+
+            if collected:
+                collected.sort(key=lambda x: x[0])
+                best_value = " ".join(v[1] for v in collected)
+
+        final_value = best_value.strip() if best_value else ""
+
+        # =========================
+        # STORE
+        # =========================
+        if current_section:
+            result[current_section][key["text"]] = final_value
+        else:
+            result[key["text"]] = final_value
 
     return result

@@ -1,9 +1,16 @@
+import os
+import json
 from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
 
 ocr_model = ocr_predictor(pretrained=True)
 
+DEBUG_OCR_DIR = "debug/ocr"
+os.makedirs(DEBUG_OCR_DIR, exist_ok=True)
+
+
 def run_ocr(image_path):
+
     doc = DocumentFile.from_images(image_path)
     result = ocr_model(doc)
 
@@ -26,5 +33,10 @@ def run_ocr(image_path):
                             int(y1 * h)
                         ]
                     })
+
+    # 🔥 SAVE DEBUG OCR
+    filename = os.path.basename(image_path).replace(".png", ".json")
+    with open(os.path.join(DEBUG_OCR_DIR, filename), "w") as f:
+        json.dump(words, f, indent=2)
 
     return words
