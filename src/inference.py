@@ -82,9 +82,10 @@ def predict(image_path, words, boxes):
             "bbox": boxes[word_idx],
             "label": label
         })
+        b = str(boxes[word_idx])
         debug_data.append({
             "words": words[word_idx],
-            "bbox": boxes[word_idx],
+            "bbox": b,
             "label": label
         })
     filename = os.path.basename(image_path).replace(".png", ".json")
