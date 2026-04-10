@@ -1,830 +1,922 @@
 [
   {
+    "text": "DIRECTORAT",
     "bbox": [
       207,
       126,
       322,
       140
     ],
-    "label": "O"
+    "conf": 92
   },
   {
+    "text": "HOSPICIO",
     "bbox": [
       305,
       148,
       393,
       162
     ],
-    "label": "O"
+    "conf": 90
   },
   {
+    "text": "HOSPITAL,",
     "bbox": [
       399,
       147,
       494,
       161
     ],
-    "label": "O"
+    "conf": 93
   },
   {
+    "text": "MARGAO,",
     "bbox": [
       500,
       145,
       582,
       159
     ],
-    "label": "O"
+    "conf": 45
   },
   {
+    "text": "EPBX:",
     "bbox": [
       115,
       180,
       162,
       191
     ],
-    "label": "B-KEY"
+    "conf": 87
   },
   {
+    "text": "2705664/2705754",
     "bbox": [
       173,
       180,
       293,
       192
     ],
-    "label": "B-VALUE"
+    "conf": 69
   },
   {
+    "text": "Casualty:",
     "bbox": [
       314,
       180,
       379,
       194
     ],
-    "label": "B-KEY"
+    "conf": 69
   },
   {
+    "text": "2735766",
     "bbox": [
       387,
       179,
       446,
       194
     ],
-    "label": "B-VALUE"
+    "conf": 90
   },
   {
+    "text": "Name",
     "bbox": [
       116,
       210,
       156,
       222
     ],
-    "label": "B-KEY"
+    "conf": 94
   },
   {
+    "text": "of",
     "bbox": [
       165,
       211,
       179,
       223
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "the",
     "bbox": [
       187,
       211,
       208,
       223
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "Patient:",
     "bbox": [
       218,
       211,
       271,
       223
     ],
-    "label": "B-KEY"
+    "conf": 87
   },
   {
+    "text": "Address:",
     "bbox": [
       116,
       229,
       177,
       257
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "Contact",
     "bbox": [
       115,
       262,
       170,
       274
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "No,",
     "bbox": [
       180,
       262,
       202,
       274
     ],
-    "label": "B-KEY"
+    "conf": 81
   },
   {
+    "text": "(Ph/Mobile):",
     "bbox": [
       211,
       262,
       302,
       283
     ],
-    "label": "B-KEY"
+    "conf": 82
   },
   {
+    "text": "Date",
     "bbox": [
       480,
       260,
       520,
       281
     ],
-    "label": "B-KEY"
+    "conf": 86
   },
   {
+    "text": "of",
     "bbox": [
       523,
       259,
       537,
       271
     ],
-    "label": "B-KEY"
+    "conf": 86
   },
   {
+    "text": "admission",
     "bbox": [
       545,
       258,
       613,
       270
     ],
-    "label": "B-KEY"
+    "conf": 88
   },
   {
+    "text": "(Hospicio",
     "bbox": [
       623,
       257,
       689,
       272
     ],
-    "label": "B-VALUE"
+    "conf": 61
   },
   {
+    "text": "Referring",
     "bbox": [
       253,
       292,
       318,
       309
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "MEDICAL",
     "bbox": [
       328,
       291,
       404,
       303
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "OFFICER",
     "bbox": [
       414,
       291,
       485,
       303
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "(Mo)",
     "bbox": [
       495,
       279,
       545,
       304
     ],
-    "label": "B-VALUE"
+    "conf": 68
   },
   {
+    "text": "(to",
     "bbox": [
       541,
       290,
       559,
       303
     ],
-    "label": "O"
+    "conf": 94
   },
   {
+    "text": "complete)",
     "bbox": [
       568,
       289,
       636,
       306
     ],
-    "label": "B-KEY"
+    "conf": 90
   },
   {
+    "text": "Referring",
     "bbox": [
       113,
       319,
       173,
       334
     ],
-    "label": "B-KEY"
+    "conf": 91
   },
   {
+    "text": "MO:",
     "bbox": [
       180,
       320,
       204,
       331
     ],
-    "label": "B-KEY"
+    "conf": 93
   },
   {
+    "text": "Gal",
     "bbox": [
       265,
       309,
       330,
       352
     ],
-    "label": "B-VALUE"
+    "conf": 55
   },
   {
+    "text": "Referring",
     "bbox": [
       463,
       307,
       523,
       336
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "Consultant:",
     "bbox": [
       531,
       307,
       599,
       336
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "By",
     "bbox": [
       601,
       306,
       650,
       354
     ],
-    "label": "B-VALUE"
+    "conf": 74
   },
   {
+    "text": "Casualty/Ward",
     "bbox": [
       463,
       328,
       556,
       355
     ],
-    "label": "B-VALUE"
+    "conf": 87
   },
   {
+    "text": "Referred",
     "bbox": [
       113,
       375,
       167,
       387
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "to",
     "bbox": [
       174,
       377,
       185,
       386
     ],
-    "label": "B-KEY"
+    "conf": 90
   },
   {
+    "text": "Hospital:",
     "bbox": [
       192,
       374,
       248,
       389
     ],
-    "label": "B-KEY"
+    "conf": 90
   },
   {
+    "text": "to",
     "bbox": [
       526,
       375,
       537,
       384
     ],
-    "label": "B-KEY"
+    "conf": 90
   },
   {
+    "text": "(Dept.):",
     "bbox": [
       545,
       372,
       594,
       387
     ],
-    "label": "B-KEY"
+    "conf": 86
   },
   {
+    "text": "Reason",
     "bbox": [
       114,
       411,
       163,
       423
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "for",
     "bbox": [
       173,
       411,
       192,
       422
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "Referral",
     "bbox": [
       201,
       410,
       258,
       422
     ],
-    "label": "B-KEY"
+    "conf": 92
   },
   {
+    "text": "&",
     "bbox": [
       267,
       410,
       278,
       421
     ],
-    "label": "B-KEY"
+    "conf": 92
   },
   {
+    "text": "Current",
     "bbox": [
       288,
       410,
       343,
       421
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "Issues:",
     "bbox": [
       354,
       410,
       398,
       422
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "\u00a9",
     "bbox": [
       458,
       430,
       480,
       513
     ],
-    "label": "B-OPTION"
+    "conf": 41
   },
   {
+    "text": "MU",
     "bbox": [
       617,
       430,
       708,
       513
     ],
-    "label": "B-OPTION"
+    "conf": 49
   },
   {
+    "text": "Referring",
     "bbox": [
       111,
       560,
       176,
       575
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "Diagnosis:",
     "bbox": [
       184,
       559,
       256,
       574
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "\u2018Treatment",
     "bbox": [
       110,
       589,
       146,
       600
     ],
-    "label": "B-OPTION"
+    "conf": 82
   },
   {
-    "bbox": [
-      143,
-      575,
-      180,
-      612
-    ],
-    "label": "B-KEY"
-  },
-  {
+    "text": "to",
     "bbox": [
       184,
       583,
       201,
       610
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
-    "bbox": [
-      189,
-      575,
-      200,
-      612
-    ],
-    "label": "B-OPTION"
-  },
-  {
+    "text": "date",
     "bbox": [
       207,
       588,
       236,
       600
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
-    "bbox": [
-      420,
-      575,
-      451,
-      621
-    ],
-    "label": "B-KEY"
-  },
-  {
+    "text": "Investigations:",
     "bbox": [
       464,
       586,
       564,
       599
     ],
-    "label": "B-KEY"
+    "conf": 61
   },
   {
+    "text": "Hb:",
     "bbox": [
       584,
       585,
       607,
       598
     ],
-    "label": "B-KEY"
+    "conf": 63
   },
   {
+    "text": "Blood",
     "bbox": [
       663,
       580,
       700,
       607
     ],
-    "label": "B-KEY"
+    "conf": 94
   },
   {
+    "text": "Group:",
     "bbox": [
       706,
       580,
       752,
       607
     ],
-    "label": "B-KEY"
+    "conf": 91
   },
   {
+    "text": "iment",
+    "bbox": [
+      143,
+      575,
+      180,
+      612
+    ],
+    "conf": 74
+  },
+  {
+    "text": "(0",
+    "bbox": [
+      189,
+      575,
+      200,
+      612
+    ],
+    "conf": 85
+  },
+  {
+    "text": "Vr",
     "bbox": [
       242,
       579,
       284,
       637
     ],
-    "label": "B-OPTION"
+    "conf": 58
   },
   {
+    "text": "Om]",
+    "bbox": [
+      420,
+      575,
+      451,
+      621
+    ],
+    "conf": 40
+  },
+  {
+    "text": "FBSURBSL:",
     "bbox": [
       464,
       625,
       549,
       637
     ],
-    "label": "B-KEY"
+    "conf": 77
   },
   {
+    "text": "Radiology:",
     "bbox": [
       464,
       644,
       530,
       659
     ],
-    "label": "B-KEY"
+    "conf": 94
   },
   {
+    "text": "@",
     "bbox": [
       12,
       768,
       40,
       792
     ],
-    "label": "O"
+    "conf": 67
   },
   {
+    "text": "Relevant",
     "bbox": [
       107,
       770,
       170,
       783
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "Past",
     "bbox": [
       177,
       770,
       207,
       782
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "History:",
     "bbox": [
       215,
       770,
       272,
       785
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "Basic",
     "bbox": [
       106,
       810,
       143,
       822
     ],
-    "label": "B-KEY"
+    "conf": 95
   },
   {
+    "text": "Parameters",
     "bbox": [
       149,
       810,
       230,
       822
     ],
-    "label": "B-KEY"
+    "conf": 93
   },
   {
+    "text": "[7]",
     "bbox": [
       242,
       805,
       267,
       825
     ],
-    "label": "B-OPTION"
+    "conf": 58
   },
   {
+    "text": "Pulse:",
     "bbox": [
       279,
       809,
       320,
       821
     ],
-    "label": "B-KEY"
+    "conf": 93
   },
   {
+    "text": "cs:",
     "bbox": [
       575,
       807,
       608,
       820
     ],
-    "label": "B-KEY"
+    "conf": 48
   },
   {
+    "text": "IS",
     "bbox": [
       611,
       787,
       672,
       838
     ],
-    "label": "B-OPTION"
+    "conf": 55
   },
   {
+    "text": "Pupils:",
     "bbox": [
       690,
       807,
       740,
       823
     ],
-    "label": "B-KEY"
+    "conf": 96
   },
   {
+    "text": "Airway",
     "bbox": [
       103,
       837,
       152,
       872
     ],
-    "label": "B-OPTION"
+    "conf": 92
   },
   {
+    "text": "Stable",
     "bbox": [
       217,
       836,
       258,
       871
     ],
-    "label": "B-OPTION"
+    "conf": 96
   },
   {
+    "text": "Unstable",
     "bbox": [
       375,
       835,
       433,
       870
     ],
-    "label": "B-OPTION"
+    "conf": 96
   },
   {
+    "text": "Assisted",
     "bbox": [
       550,
       847,
       606,
       860
     ],
-    "label": "B-OPTION"
+    "conf": 94
   },
   {
+    "text": "Breathing",
     "bbox": [
       102,
       893,
       176,
       909
     ],
-    "label": "B-KEY"
+    "conf": 88
   },
   {
+    "text": "Stable",
     "bbox": [
       217,
       892,
       257,
       905
     ],
-    "label": "B-OPTION"
+    "conf": 63
   },
   {
+    "text": "\u2014",
     "bbox": [
       360,
       879,
       367,
       914
     ],
-    "label": "B-OPTION"
+    "conf": 48
   },
   {
+    "text": "Unstable",
     "bbox": [
       375,
       891,
       433,
       904
     ],
-    "label": "B-OPTION"
+    "conf": 95
   },
   {
+    "text": "Assisted",
     "bbox": [
       551,
       891,
       607,
       904
     ],
-    "label": "B-OPTION"
+    "conf": 95
   },
   {
+    "text": "Circulation",
     "bbox": [
       100,
       939,
       182,
       953
     ],
-    "label": "B-OPTION"
+    "conf": 66
   },
   {
+    "text": "Suble",
     "bbox": [
       216,
       938,
       256,
       951
     ],
-    "label": "B-OPTION"
+    "conf": 48
   },
   {
+    "text": "Unstable",
     "bbox": [
       375,
       925,
       433,
       960
     ],
-    "label": "B-OPTION"
+    "conf": 94
   },
   {
+    "text": "Assisted",
     "bbox": [
       552,
       937,
       608,
       951
     ],
-    "label": "B-OPTION"
+    "conf": 93
   },
   {
+    "text": "Affix",
     "bbox": [
       140,
       1000,
       179,
       1026
     ],
-    "label": "B-OPTION"
+    "conf": 95
   },
   {
+    "text": "Casualty",
     "bbox": [
       185,
       1000,
       246,
       1026
     ],
-    "label": "B-OPTION"
+    "conf": 95
   },
   {
+    "text": "Stamp",
     "bbox": [
       254,
       1000,
       301,
       1026
     ],
-    "label": "B-OPTION"
+    "conf": 96
   },
   {
+    "text": "Signature",
     "bbox": [
       475,
       1100,
       542,
       1116
     ],
-    "label": "O"
+    "conf": 96
   },
   {
+    "text": "of",
     "bbox": [
       549,
       1100,
       566,
       1117
     ],
-    "label": "O"
+    "conf": 96
   },
   {
+    "text": "the",
     "bbox": [
       570,
       1101,
       591,
       1114
     ],
-    "label": "O"
+    "conf": 95
   },
   {
+    "text": "Refer",
     "bbox": [
       598,
       1101,
       629,
       1118
     ],
-    "label": "O"
+    "conf": 86
   }
 ]

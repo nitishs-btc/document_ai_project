@@ -5,7 +5,7 @@ import json
 
 from src.ocr import run_ocr
 from src.inference import predict
-from src.utils import extract_structured
+from src.utils import extract_structured, sort_words
 from src.pdf_service import PDFService
 from src.checkbox import map_checkbox_to_text, classify_checkbox, detect_checkboxes
 
@@ -17,13 +17,6 @@ os.makedirs(TEMP_IMAGE_FOLDER, exist_ok=True)
 
 IMAGE_EXT = (".png", ".jpg", ".jpeg")
 PDF_EXT = (".pdf",)
-
-
-# ==========================
-# BETTER SORTING
-# ==========================
-def sort_words(words):
-    return sorted(words, key=lambda w: (round(w["bbox"][1] / 20), w["bbox"][0]))
 
 
 # ==========================
@@ -62,6 +55,9 @@ def process_image(img_path):
 
     # DEBUG
     os.makedirs("debug", exist_ok=True)
+    with open("debug/predictions.json", "w") as f:
+        json.dump(predictions, f, indent=2)
+
     with open("debug/words_with_labels.json", "w") as f:
         json.dump(words_data, f, indent=2)
 
@@ -70,7 +66,7 @@ def process_image(img_path):
     structured_data = extract_structured(words_data, labels)
 
     # CHECKBOX
-    checkbox_boxes = detect_checkboxes(img_path)
+    checkbox_boxes = detect_checkboxes(img_path, words_data)
     checkbox_states = classify_checkbox(img_path, checkbox_boxes)
     checkbox_results = map_checkbox_to_text(checkbox_states, words_data)
 

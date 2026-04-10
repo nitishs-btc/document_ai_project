@@ -1,2991 +1,921 @@
 [
   {
-    "text": "ata",
+    "text": "DIRECTORAT",
     "bbox": [
-      1892,
-      133,
-      2052,
-      232
+      207,
+      126,
+      322,
+      140
     ],
     "label": "O"
   },
   {
-    "text": "CEAN",
+    "text": "HOSPICIO",
     "bbox": [
-      123,
-      162,
-      280,
-      205
+      305,
+      148,
+      393,
+      162
     ],
     "label": "O"
   },
   {
-    "text": "Clinic",
+    "text": "HOSPITAL,",
     "bbox": [
-      304,
-      162,
-      458,
-      205
+      399,
+      147,
+      494,
+      161
     ],
     "label": "O"
   },
   {
-    "text": "(Psychiatric",
+    "text": "MARGAO,",
     "bbox": [
-      479,
-      162,
-      805,
-      216
+      500,
+      145,
+      582,
+      159
     ],
     "label": "O"
   },
   {
-    "text": "genetic",
+    "text": "EPBX:",
     "bbox": [
-      825,
+      115,
+      180,
       162,
-      1025,
-      216
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "counseling)",
-    "bbox": [
-      1045,
-      162,
-      1367,
-      216
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Tel:",
-    "bbox": [
-      121,
-      229,
-      213,
-      272
+      191
     ],
     "label": "B-KEY"
   },
   {
-    "text": "(604)",
+    "text": "2705664/2705754",
     "bbox": [
-      254,
+      173,
+      180,
+      293,
+      192
+    ],
+    "label": "B-VALUE"
+  },
+  {
+    "text": "Casualty:",
+    "bbox": [
+      314,
+      180,
+      379,
+      194
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "2735766",
+    "bbox": [
+      387,
+      179,
+      446,
+      194
+    ],
+    "label": "B-VALUE"
+  },
+  {
+    "text": "Name",
+    "bbox": [
+      116,
+      210,
+      156,
+      222
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "of",
+    "bbox": [
+      165,
+      211,
+      179,
+      223
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "the",
+    "bbox": [
+      187,
+      211,
+      208,
+      223
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Patient:",
+    "bbox": [
+      218,
+      211,
+      271,
+      223
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Address:",
+    "bbox": [
+      116,
       229,
-      384,
+      177,
+      257
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Contact",
+    "bbox": [
+      115,
+      262,
+      170,
+      274
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "No,",
+    "bbox": [
+      180,
+      262,
+      202,
+      274
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "(Ph/Mobile):",
+    "bbox": [
+      211,
+      262,
+      302,
       283
     ],
-    "label": "B-VALUE"
+    "label": "B-KEY"
   },
   {
-    "text": "875-2157",
+    "text": "Date",
     "bbox": [
-      406,
-      229,
-      647,
+      480,
+      260,
+      520,
+      281
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "of",
+    "bbox": [
+      523,
+      259,
+      537,
+      271
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "admission",
+    "bbox": [
+      545,
+      258,
+      613,
+      270
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "(Hospicio",
+    "bbox": [
+      623,
+      257,
+      689,
       272
     ],
     "label": "B-VALUE"
   },
   {
-    "text": "CHILDRENS",
+    "text": "Referring",
     "bbox": [
-      1733,
-      217,
-      2070,
-      290
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Fax:",
-    "bbox": [
-      124,
-      296,
-      234,
-      339
+      253,
+      292,
+      318,
+      309
     ],
     "label": "B-KEY"
   },
   {
-    "text": "(604)",
-    "bbox": [
-      259,
-      296,
-      388,
-      350
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "875-2825",
-    "bbox": [
-      410,
-      296,
-      653,
-      339
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "HOSPITAL",
-    "bbox": [
-      1772,
-      293,
-      2070,
-      355
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Services",
-    "bbox": [
-      1860,
-      355,
-      1939,
-      422
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Authoriy",
-    "bbox": [
-      1955,
-      355,
-      2044,
-      422
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Provincial",
-    "bbox": [
-      124,
-      372,
-      315,
-      406
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Medical",
-    "bbox": [
-      334,
-      372,
-      485,
-      406
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Genetics",
-    "bbox": [
-      503,
-      372,
-      680,
-      406
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Program",
-    "bbox": [
-      699,
-      372,
-      867,
-      415
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "B.C.",
-    "bbox": [
-      123,
-      440,
-      205,
-      474
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Children\u2019s",
-    "bbox": [
-      223,
-      440,
-      422,
-      474
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Hospital",
-    "bbox": [
-      441,
-      440,
-      599,
-      482
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Room",
-    "bbox": [
-      124,
-      495,
-      239,
-      529
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "C234,",
-    "bbox": [
-      256,
-      495,
-      373,
-      534
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "4500",
-    "bbox": [
-      390,
-      495,
-      489,
-      529
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Oak",
-    "bbox": [
-      506,
-      495,
-      587,
-      529
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Street,",
-    "bbox": [
-      603,
-      495,
-      732,
-      534
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Vancouver,",
-    "bbox": [
-      748,
-      495,
-      970,
-      534
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "BC,",
-    "bbox": [
-      990,
-      495,
-      1059,
-      534
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "V6H",
-    "bbox": [
-      1076,
-      495,
-      1161,
-      529
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "3N1",
-    "bbox": [
-      1180,
-      495,
-      1253,
-      529
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "DATE",
-    "bbox": [
-      123,
-      697,
-      226,
-      727
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "OF",
-    "bbox": [
-      241,
-      697,
-      295,
-      728
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "REFERRAL:",
-    "bbox": [
-      311,
-      697,
-      539,
-      727
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "08/11/2025",
-    "bbox": [
-      556,
-      697,
-      757,
-      728
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Thompson,",
-    "bbox": [
-      121,
-      936,
-      324,
-      975
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Emily",
-    "bbox": [
-      342,
-      936,
-      442,
-      975
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Roberts",
-    "bbox": [
-      849,
-      932,
-      990,
-      979
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "90/05/15",
-    "bbox": [
-      1388,
-      936,
-      1545,
-      967
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "35",
-    "bbox": [
-      1800,
-      932,
-      1850,
-      979
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      2000,
-      936,
-      2094,
-      975
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "458-5696",
-    "bbox": [
-      2109,
-      936,
-      2282,
-      967
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(AGE)",
-    "bbox": [
-      1806,
-      970,
-      1895,
-      1017
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(PATIENT",
-    "bbox": [
-      122,
-      982,
-      266,
-      1013
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "SURNAME,",
-    "bbox": [
-      278,
-      982,
-      449,
-      1010
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "FIRST)",
-    "bbox": [
-      464,
-      982,
-      567,
-      1013
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(PREVIOUS",
-    "bbox": [
-      839,
-      982,
-      1018,
-      1013
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "/",
-    "bbox": [
-      1029,
-      982,
-      1038,
-      1006
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "MAIDEN",
-    "bbox": [
-      1050,
-      982,
-      1174,
-      1006
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NAME)",
-    "bbox": [
-      1189,
-      982,
-      1292,
-      1013
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(DOB:",
-    "bbox": [
-      1379,
-      982,
-      1466,
-      1013
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "YY/MM/DD)",
-    "bbox": [
-      1479,
-      982,
-      1655,
-      1013
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(PHN)",
-    "bbox": [
-      2001,
-      982,
-      2090,
-      1013
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "123",
-    "bbox": [
-      125,
-      1176,
-      187,
-      1207
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Maple",
-    "bbox": [
-      204,
-      1176,
-      312,
-      1214
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Street.",
+    "text": "MEDICAL",
     "bbox": [
       328,
-      1176,
-      445,
-      1212
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Vancouver,",
-    "bbox": [
-      460,
-      1176,
-      662,
-      1212
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "BC,",
-    "bbox": [
-      680,
-      1176,
-      743,
-      1212
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "V5K",
-    "bbox": [
-      758,
-      1176,
-      836,
-      1207
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "1A2",
-    "bbox": [
-      853,
-      1176,
-      920,
-      1206
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      1392,
-      1176,
-      1484,
-      1213
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "287-2658",
-    "bbox": [
-      1499,
-      1176,
-      1672,
-      1207
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(589)",
-    "bbox": [
-      1746,
-      1176,
-      1839,
-      1213
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "268-5987",
-    "bbox": [
-      1853,
-      1176,
-      2026,
-      1207
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(685)",
-    "bbox": [
-      2146,
-      1176,
-      2239,
-      1213
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "256-5487",
-    "bbox": [
-      2254,
-      1176,
-      2426,
-      1207
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(ADDRESS)",
-    "bbox": [
-      122,
-      1210,
-      302,
-      1257
+      291,
+      404,
+      303
     ],
     "label": "B-KEY"
   },
   {
-    "text": "(HOME",
+    "text": "OFFICER",
     "bbox": [
-      1388,
-      1222,
-      1495,
-      1253
+      414,
+      291,
+      485,
+      303
     ],
     "label": "B-KEY"
   },
   {
-    "text": "PHONE)",
+    "text": "(Mo)",
     "bbox": [
-      1508,
-      1222,
-      1634,
-      1253
+      495,
+      279,
+      545,
+      304
+    ],
+    "label": "B-VALUE"
+  },
+  {
+    "text": "(to",
+    "bbox": [
+      541,
+      290,
+      559,
+      303
+    ],
+    "label": "O"
+  },
+  {
+    "text": "complete)",
+    "bbox": [
+      568,
+      289,
+      636,
+      306
     ],
     "label": "B-KEY"
   },
   {
-    "text": "(WORK",
+    "text": "Referring",
     "bbox": [
-      1748,
-      1222,
-      1861,
-      1253
+      113,
+      319,
+      173,
+      334
     ],
     "label": "B-KEY"
   },
   {
-    "text": "PHONE)",
+    "text": "MO:",
     "bbox": [
-      1873,
-      1222,
-      1999,
-      1253
+      180,
+      320,
+      204,
+      331
     ],
     "label": "B-KEY"
   },
   {
-    "text": "(CELL",
+    "text": "Gal",
     "bbox": [
-      2150,
-      1222,
-      2241,
-      1253
+      265,
+      309,
+      330,
+      352
+    ],
+    "label": "B-VALUE"
+  },
+  {
+    "text": "Referring",
+    "bbox": [
+      463,
+      307,
+      523,
+      336
     ],
     "label": "B-KEY"
   },
   {
-    "text": "PHONE)",
+    "text": "Consultant:",
     "bbox": [
-      2254,
-      1222,
-      2380,
-      1253
+      531,
+      307,
+      599,
+      336
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "By",
+    "bbox": [
+      601,
+      306,
+      650,
+      354
+    ],
+    "label": "B-VALUE"
+  },
+  {
+    "text": "Casualty/Ward",
+    "bbox": [
+      463,
+      328,
+      556,
+      355
+    ],
+    "label": "B-VALUE"
+  },
+  {
+    "text": "Referred",
+    "bbox": [
+      113,
+      375,
+      167,
+      387
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "to",
+    "bbox": [
+      174,
+      377,
+      185,
+      386
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Hospital:",
+    "bbox": [
+      192,
+      374,
+      248,
+      389
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "to",
+    "bbox": [
+      526,
+      375,
+      537,
+      384
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "(Dept.):",
+    "bbox": [
+      545,
+      372,
+      594,
+      387
     ],
     "label": "B-KEY"
   },
   {
     "text": "Reason",
     "bbox": [
-      123,
-      1364,
-      260,
-      1395
+      114,
+      411,
+      163,
+      423
     ],
     "label": "B-KEY"
   },
   {
     "text": "for",
     "bbox": [
-      275,
-      1364,
-      323,
-      1395
+      173,
+      411,
+      192,
+      422
     ],
     "label": "B-KEY"
   },
   {
-    "text": "referral",
+    "text": "Referral",
     "bbox": [
-      338,
-      1364,
-      463,
-      1394
+      201,
+      410,
+      258,
+      422
     ],
     "label": "B-KEY"
   },
   {
-    "text": "psychiatric",
+    "text": "&",
     "bbox": [
+      267,
+      410,
+      278,
+      421
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Current",
+    "bbox": [
+      288,
+      410,
+      343,
+      421
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Issues:",
+    "bbox": [
+      354,
+      410,
+      398,
+      422
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "\u00a9",
+    "bbox": [
+      458,
+      430,
+      480,
+      513
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "MU",
+    "bbox": [
+      617,
+      430,
+      708,
+      513
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Referring",
+    "bbox": [
+      111,
+      560,
+      176,
+      575
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Diagnosis:",
+    "bbox": [
+      184,
+      559,
+      256,
+      574
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "\u2018Treatment",
+    "bbox": [
+      110,
+      589,
+      146,
+      600
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "iment",
+    "bbox": [
+      143,
+      575,
+      180,
+      612
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "to",
+    "bbox": [
+      184,
+      583,
+      201,
+      610
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "(0",
+    "bbox": [
+      189,
+      575,
+      200,
+      612
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "date",
+    "bbox": [
+      207,
+      588,
+      236,
+      600
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Om]",
+    "bbox": [
+      420,
+      575,
+      451,
+      621
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Investigations:",
+    "bbox": [
+      464,
+      586,
+      564,
+      599
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Hb:",
+    "bbox": [
+      584,
+      585,
+      607,
+      598
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Blood",
+    "bbox": [
+      663,
+      580,
+      700,
+      607
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Group:",
+    "bbox": [
+      706,
+      580,
+      752,
+      607
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Vr",
+    "bbox": [
+      242,
+      579,
+      284,
+      637
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "FBSURBSL:",
+    "bbox": [
+      464,
+      625,
+      549,
+      637
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Radiology:",
+    "bbox": [
+      464,
+      644,
       530,
-      1364,
-      723,
-      1403
+      659
     ],
     "label": "B-KEY"
   },
   {
-    "text": "diagnosis:",
+    "text": "@",
     "bbox": [
-      736,
-      1364,
-      919,
-      1403
+      12,
+      768,
+      40,
+      792
+    ],
+    "label": "O"
+  },
+  {
+    "text": "Relevant",
+    "bbox": [
+      107,
+      770,
+      170,
+      783
     ],
     "label": "B-KEY"
   },
   {
-    "text": "Family",
+    "text": "Past",
     "bbox": [
+      177,
+      770,
+      207,
+      782
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "History:",
+    "bbox": [
+      215,
+      770,
+      272,
+      785
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Basic",
+    "bbox": [
+      106,
+      810,
+      143,
+      822
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Parameters",
+    "bbox": [
+      149,
+      810,
+      230,
+      822
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "[7]",
+    "bbox": [
+      242,
+      805,
+      267,
+      825
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Pulse:",
+    "bbox": [
+      279,
+      809,
+      320,
+      821
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "cs:",
+    "bbox": [
+      575,
+      807,
+      608,
+      820
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "IS",
+    "bbox": [
+      611,
+      787,
+      672,
+      838
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Pupils:",
+    "bbox": [
+      690,
+      807,
+      740,
+      823
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Airway",
+    "bbox": [
+      103,
+      837,
+      152,
+      872
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Stable",
+    "bbox": [
+      217,
+      836,
+      258,
+      871
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Unstable",
+    "bbox": [
+      375,
+      835,
+      433,
+      870
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Assisted",
+    "bbox": [
+      550,
+      847,
+      606,
+      860
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Breathing",
+    "bbox": [
+      102,
+      893,
+      176,
+      909
+    ],
+    "label": "B-KEY"
+  },
+  {
+    "text": "Stable",
+    "bbox": [
+      217,
+      892,
+      257,
+      905
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "\u2014",
+    "bbox": [
+      360,
+      879,
+      367,
+      914
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Unstable",
+    "bbox": [
+      375,
+      891,
+      433,
+      904
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Assisted",
+    "bbox": [
+      551,
+      891,
+      607,
+      904
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Circulation",
+    "bbox": [
+      100,
+      939,
+      182,
+      953
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Suble",
+    "bbox": [
+      216,
+      938,
+      256,
+      951
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Unstable",
+    "bbox": [
+      375,
+      925,
+      433,
+      960
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Assisted",
+    "bbox": [
+      552,
       937,
-      1364,
-      1056,
-      1403
+      608,
+      951
     ],
-    "label": "B-VALUE"
+    "label": "B-OPTION"
   },
   {
-    "text": "history",
+    "text": "Affix",
     "bbox": [
-      1072,
-      1364,
-      1190,
-      1403
+      140,
+      1000,
+      179,
+      1026
     ],
-    "label": "B-VALUE"
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Casualty",
+    "bbox": [
+      185,
+      1000,
+      246,
+      1026
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Stamp",
+    "bbox": [
+      254,
+      1000,
+      301,
+      1026
+    ],
+    "label": "B-OPTION"
+  },
+  {
+    "text": "Signature",
+    "bbox": [
+      475,
+      1100,
+      542,
+      1116
+    ],
+    "label": "O"
   },
   {
     "text": "of",
     "bbox": [
-      1204,
-      1364,
-      1239,
-      1395
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "schizophrenia",
-    "bbox": [
-      1250,
-      1364,
-      1504,
-      1402
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "in",
-    "bbox": [
-      1521,
-      1364,
-      1547,
-      1394
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "first-degree",
-    "bbox": [
-      1562,
-      1364,
-      1770,
-      1403
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "relatives",
-    "bbox": [
-      1787,
-      1364,
-      1937,
-      1395
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(mother",
-    "bbox": [
-      1954,
-      1364,
-      2094,
-      1403
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "and",
-    "bbox": [
-      2108,
-      1364,
-      2172,
-      1395
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "brother);",
-    "bbox": [
-      2190,
-      1364,
-      2341,
-      1403
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "or",
-    "bbox": [
-      479,
-      1372,
-      515,
-      1395
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "patient",
-    "bbox": [
-      123,
-      1412,
-      244,
-      1450
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "diagnosed",
-    "bbox": [
-      257,
-      1412,
-      445,
-      1451
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "with",
-    "bbox": [
-      460,
-      1412,
-      531,
-      1442
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "bipolar",
-    "bbox": [
       549,
-      1412,
-      671,
-      1450
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "disorder",
-    "bbox": [
-      683,
-      1412,
-      833,
-      1443
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "type",
-    "bbox": [
-      845,
-      1413,
-      921,
-      1451
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "|",
-    "bbox": [
-      939,
-      1412,
-      943,
-      1442
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "in",
-    "bbox": [
-      961,
-      1412,
-      987,
-      1442
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "2015.",
-    "bbox": [
-      1003,
-      1412,
-      1102,
-      1443
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Seeking",
-    "bbox": [
-      1119,
-      1412,
-      1265,
-      1451
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "psychiatric",
-    "bbox": [
-      1283,
-      1412,
-      1475,
-      1451
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "genetic",
-    "bbox": [
-      1489,
-      1412,
-      1621,
-      1451
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "counseling",
-    "bbox": [
-      1636,
-      1412,
-      1830,
-      1451
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "for",
-    "bbox": [
-      1844,
-      1412,
-      1893,
-      1443
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "risk",
-    "bbox": [
-      1908,
-      1412,
-      1969,
-      1443
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "assessment,",
-    "bbox": [
-      1983,
-      1413,
-      2211,
-      1448
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "reproductive",
-    "bbox": [
-      123,
-      1460,
-      347,
-      1498
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "planning,",
-    "bbox": [
-      363,
-      1460,
-      526,
-      1499
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "and",
-    "bbox": [
-      543,
-      1460,
-      607,
-      1491
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "variant",
-    "bbox": [
-      623,
-      1460,
-      746,
-      1490
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "interpretation.",
-    "bbox": [
-      762,
-      1460,
-      1010,
-      1498
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Please",
-    "bbox": [
-      123,
-      1556,
-      245,
-      1587
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "list",
-    "bbox": [
-      261,
-      1556,
-      309,
-      1587
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "current",
-    "bbox": [
-      323,
-      1557,
-      450,
-      1587
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "medications:",
-    "bbox": [
-      465,
-      1556,
-      692,
-      1587
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Lithium",
-    "bbox": [
-      710,
-      1556,
-      839,
-      1586
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "300mg",
-    "bbox": [
-      855,
-      1556,
-      978,
-      1595
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "twice",
-    "bbox": [
-      993,
-      1556,
-      1085,
-      1587
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(mood",
-    "bbox": [
-      1102,
-      1556,
-      1214,
-      1595
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "stabilizer),",
-    "bbox": [
-      1229,
-      1556,
-      1415,
-      1595
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Quetiapine",
-    "bbox": [
-      1432,
-      1556,
-      1629,
-      1594
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "200mg",
-    "bbox": [
-      1644,
-      1556,
-      1767,
-      1595
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "at",
-    "bbox": [
-      1784,
-      1557,
-      1816,
-      1586
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "bedtime",
-    "bbox": [
-      1831,
-      1556,
-      1974,
-      1587
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(antipsychotic),",
-    "bbox": [
-      1991,
-      1556,
-      2264,
-      1595
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Sertraline",
-    "bbox": [
-      122,
-      1604,
-      296,
-      1635
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "100mg",
-    "bbox": [
-      314,
-      1604,
-      434,
-      1643
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "daily",
-    "bbox": [
-      449,
-      1604,
-      533,
-      1643
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(antidepressant)",
-    "bbox": [
-      548,
-      1604,
-      845,
-      1643
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Any",
-    "bbox": [
-      120,
-      1755,
-      190,
-      1794
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "family",
-    "bbox": [
-      203,
-      1755,
-      311,
-      1794
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "or",
-    "bbox": [
-      324,
-      1763,
-      360,
-      1786
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "relatives",
-    "bbox": [
-      375,
-      1755,
-      525,
-      1786
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "seen",
-    "bbox": [
-      539,
-      1763,
-      626,
-      1786
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "in",
-    "bbox": [
-      643,
-      1755,
-      670,
-      1785
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Medical",
-    "bbox": [
-      687,
-      1755,
-      825,
-      1786
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Genetics?0",
-    "bbox": [
-      841,
-      1755,
-      1025,
-      1786
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NO",
-    "bbox": [
-      1074,
-      1755,
-      1132,
-      1786
-    ],
-    "label": "B-OPTION"
-  },
-  {
-    "text": "YES:",
-    "bbox": [
-      1230,
-      1755,
-      1321,
-      1786
-    ],
-    "label": "B-OPTION"
-  },
-  {
-    "text": "John",
-    "bbox": [
-      1349,
-      1755,
-      1435,
-      1786
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Roberts",
-    "bbox": [
-      1453,
-      1755,
-      1594,
-      1786
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "87/08/20",
-    "bbox": [
-      1635,
-      1755,
-      1793,
-      1786
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "(name/DOB)",
-    "bbox": [
-      1810,
-      1761,
-      1992,
-      1792
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "-",
-    "bbox": [
-      1608,
-      1772,
-      1620,
-      1776
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Does",
-    "bbox": [
-      123,
-      1909,
-      215,
-      1940
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "this",
-    "bbox": [
-      229,
-      1909,
-      291,
-      1940
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "patient",
-    "bbox": [
-      308,
-      1909,
-      429,
-      1947
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "need",
-    "bbox": [
-      444,
-      1909,
-      531,
-      1940
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "interpreter?",
-    "bbox": [
-      606,
-      1909,
-      814,
-      1947
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NO",
-    "bbox": [
-      1110,
-      1909,
-      1168,
-      1940
-    ],
-    "label": "B-OPTION"
-  },
-  {
-    "text": "YES:",
-    "bbox": [
-      1245,
-      1905,
-      1337,
-      1952
-    ],
-    "label": "B-OPTION"
-  },
-  {
-    "text": "an",
-    "bbox": [
-      548,
-      1917,
-      589,
-      1939
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(language)",
-    "bbox": [
-      2259,
-      1915,
-      2413,
-      1946
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Is",
-    "bbox": [
-      124,
-      2062,
-      150,
-      2093
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "this",
-    "bbox": [
-      164,
-      2062,
-      226,
-      2093
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "referral",
-    "bbox": [
-      243,
-      2062,
-      369,
-      2092
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "regarding",
-    "bbox": [
-      386,
-      2062,
-      556,
-      2101
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "current",
-    "bbox": [
-      608,
-      2063,
-      735,
-      2093
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "pregnancy?",
-    "bbox": [
-      750,
-      2062,
-      962,
-      2101
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "O",
-    "bbox": [
-      1199,
-      2058,
-      1223,
-      2106
-    ],
-    "label": "B-OPTION"
-  },
-  {
-    "text": "YES:",
-    "bbox": [
-      1245,
-      2062,
-      1337,
-      2093
-    ],
-    "label": "B-OPTION"
-  },
-  {
-    "text": "(LMP",
-    "bbox": [
-      2259,
-      2068,
-      2336,
-      2099
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "date)",
-    "bbox": [
-      2346,
-      2068,
-      2419,
-      2099
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "a",
-    "bbox": [
-      573,
-      2070,
-      592,
-      2092
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "REFERRING",
-    "bbox": [
-      123,
-      2257,
-      362,
-      2288
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "DR:",
-    "bbox": [
-      379,
-      2257,
-      445,
-      2287
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Dr.",
-    "bbox": [
-      463,
-      2257,
-      509,
-      2287
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Sarah",
-    "bbox": [
-      526,
-      2257,
-      632,
-      2288
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Patel",
-    "bbox": [
-      650,
-      2257,
-      739,
-      2287
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "FAMILY",
-    "bbox": [
-      1301,
-      2257,
-      1442,
-      2287
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "DR:",
-    "bbox": [
-      1457,
-      2257,
-      1522,
-      2287
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Dr.",
-    "bbox": [
-      1541,
-      2257,
-      1587,
-      2287
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Michael",
-    "bbox": [
-      1605,
-      2257,
-      1743,
-      2288
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Lee",
-    "bbox": [
-      1760,
-      2257,
-      1825,
-      2287
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "BILLING",
-    "bbox": [
-      123,
-      2329,
-      277,
-      2360
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NO:",
-    "bbox": [
-      294,
-      2329,
-      361,
-      2360
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "36585",
-    "bbox": [
-      378,
-      2329,
-      490,
-      2360
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "BILLING",
-    "bbox": [
-      1301,
-      2329,
-      1455,
-      2360
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NO:",
-    "bbox": [
-      1472,
-      2329,
-      1539,
-      2360
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "3589752",
-    "bbox": [
-      1557,
-      2329,
-      1715,
-      2360
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "ADDRESS:",
-    "bbox": [
-      120,
-      2402,
-      329,
-      2433
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Vancouver",
-    "bbox": [
-      344,
-      2402,
-      540,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Family",
-    "bbox": [
-      555,
-      2402,
-      673,
-      2441
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Clinic,",
-    "bbox": [
-      688,
-      2402,
-      796,
-      2438
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "469",
-    "bbox": [
-      812,
-      2402,
-      878,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Oak",
-    "bbox": [
-      894,
-      2402,
-      967,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "St,",
-    "bbox": [
-      982,
-      2402,
-      1027,
-      2438
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Vancouver,",
-    "bbox": [
-      1042,
-      2402,
-      1244,
-      2438
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "|",
-    "bbox": [
-      1280,
-      2398,
-      1300,
-      2446
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "ADDRESS:",
-    "bbox": [
-      1298,
-      2402,
-      1507,
-      2433
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "East",
-    "bbox": [
-      1525,
-      2402,
-      1605,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Vancouver",
-    "bbox": [
-      1617,
-      2402,
-      1813,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Medical",
-    "bbox": [
-      1828,
-      2402,
-      1965,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Centre,",
-    "bbox": [
-      1982,
-      2402,
-      2113,
-      2438
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "789",
-    "bbox": [
-      2130,
-      2402,
-      2195,
-      2433
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Main",
-    "bbox": [
-      2212,
-      2402,
-      2296,
-      2432
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "St,",
-    "bbox": [
-      2313,
-      2402,
-      2358,
-      2438
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "BC,",
-    "bbox": [
-      123,
-      2450,
-      185,
-      2486
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "V6H",
-    "bbox": [
-      201,
-      2450,
-      278,
-      2481
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "3N2",
-    "bbox": [
-      295,
-      2450,
-      367,
-      2481
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Vancouver",
-    "bbox": [
-      1298,
-      2450,
-      1494,
-      2481
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "BC,",
-    "bbox": [
-      1508,
-      2450,
-      1571,
-      2486
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "V5T",
-    "bbox": [
-      1586,
-      2450,
-      1662,
-      2481
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "2Y3",
-    "bbox": [
-      1675,
-      2450,
-      1746,
-      2481
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "PHONE",
-    "bbox": [
-      123,
-      2523,
-      266,
-      2554
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NUMBER:",
-    "bbox": [
-      282,
-      2523,
-      468,
-      2554
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      486,
-      2523,
-      578,
-      2562
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "875-2689",
-    "bbox": [
-      594,
-      2523,
-      765,
-      2554
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "PHONE",
-    "bbox": [
-      1301,
-      2523,
-      1444,
-      2554
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NUMBER:",
-    "bbox": [
-      1460,
-      2523,
-      1646,
-      2554
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      1664,
-      2523,
-      1756,
-      2562
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "456-9374",
-    "bbox": [
-      1771,
-      2523,
-      1944,
-      2554
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "FAX",
-    "bbox": [
-      123,
-      2596,
-      197,
-      2626
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NUMBER:",
-    "bbox": [
-      213,
-      2596,
-      398,
-      2627
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      416,
-      2596,
-      509,
-      2635
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "268-6953",
-    "bbox": [
-      523,
-      2596,
-      696,
-      2627
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "FAX",
-    "bbox": [
-      1301,
-      2596,
-      1376,
-      2626
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "NUMBER:",
-    "bbox": [
-      1391,
-      2596,
-      1576,
-      2627
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      1595,
-      2596,
-      1687,
-      2635
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "786-2927",
-    "bbox": [
-      1702,
-      2596,
-      1874,
-      2627
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Please",
-    "bbox": [
-      123,
-      2678,
-      245,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "list",
-    "bbox": [
-      261,
-      2678,
-      309,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "any",
-    "bbox": [
-      323,
-      2686,
-      387,
-      2717
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "other",
-    "bbox": [
-      401,
-      2678,
-      495,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "doctors",
-    "bbox": [
-      507,
-      2678,
-      641,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "involved",
-    "bbox": [
-      657,
-      2678,
-      804,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "with",
-    "bbox": [
-      819,
-      2678,
-      890,
-      2708
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "care:",
-    "bbox": [
-      1072,
-      2686,
-      1159,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "Psychiatrist:",
-    "bbox": [
-      1177,
-      2678,
-      1419,
-      2717
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Dr.",
-    "bbox": [
-      1437,
-      2678,
-      1483,
-      2708
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Anna",
-    "bbox": [
-      1498,
-      2678,
-      1594,
-      2708
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Kim,",
-    "bbox": [
-      1610,
-      2678,
-      1687,
-      2714
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Billing",
-    "bbox": [
-      1705,
-      2678,
-      1810,
-      2717
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "No.:",
-    "bbox": [
-      1828,
-      2678,
-      1898,
-      2709
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "54321,",
-    "bbox": [
-      1915,
-      2678,
-      2037,
-      2714
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Address:",
-    "bbox": [
-      2052,
-      2678,
-      2213,
-      2709
-    ],
-    "label": "B-KEY"
-  },
-  {
-    "text": "BC",
-    "bbox": [
-      2231,
-      2678,
-      2284,
-      2709
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Mental",
-    "bbox": [
-      2300,
-      2678,
-      2419,
-      2708
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Health",
-    "bbox": [
-      123,
-      2726,
-      237,
-      2756
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Clinic,",
-    "bbox": [
-      253,
-      2726,
-      361,
-      2762
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "1010",
-    "bbox": [
-      381,
-      2726,
-      467,
-      2757
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Broadway,",
-    "bbox": [
-      484,
-      2726,
-      671,
-      2765
-    ],
-    "label": "B-VALUE"
-  },
-  {
-    "text": "Vancouver,",
-    "bbox": [
-      686,
-      2726,
-      888,
-      2762
+      1100,
+      566,
+      1117
     ],
     "label": "O"
   },
   {
-    "text": "BC,",
+    "text": "the",
     "bbox": [
-      906,
-      2726,
-      969,
-      2762
+      570,
+      1101,
+      591,
+      1114
     ],
     "label": "O"
   },
   {
-    "text": "V6H",
+    "text": "Refer",
     "bbox": [
-      984,
-      2726,
-      1062,
-      2757
-    ],
-    "label": "O"
-  },
-  {
-    "text": "1Y1,",
-    "bbox": [
-      1081,
-      2726,
-      1159,
-      2762
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Phone:",
-    "bbox": [
-      1177,
-      2726,
-      1302,
-      2757
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      1320,
-      2726,
-      1413,
-      2765
-    ],
-    "label": "O"
-  },
-  {
-    "text": "682-2345,",
-    "bbox": [
-      1428,
-      2726,
-      1610,
-      2762
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Fax:",
-    "bbox": [
-      1628,
-      2726,
-      1703,
-      2756
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      1721,
-      2726,
-      1813,
-      2765
-    ],
-    "label": "O"
-  },
-  {
-    "text": "682-2346",
-    "bbox": [
-      1829,
-      2726,
-      2000,
-      2757
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(managing",
-    "bbox": [
-      2017,
-      2726,
-      2208,
-      2765
-    ],
-    "label": "O"
-  },
-  {
-    "text": "bipolar",
-    "bbox": [
-      2226,
-      2726,
-      2348,
-      2764
-    ],
-    "label": "O"
-  },
-  {
-    "text": "disorder",
-    "bbox": [
-      121,
-      2774,
-      270,
-      2805
-    ],
-    "label": "O"
-  },
-  {
-    "text": "since",
-    "bbox": [
-      283,
-      2774,
-      377,
-      2805
-    ],
-    "label": "O"
-  },
-  {
-    "text": "2015).",
-    "bbox": [
-      391,
-      2774,
-      505,
-      2813
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Obstetrician-Gynecologist",
-    "bbox": [
-      122,
-      2872,
-      639,
-      2911
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(OB-GYN):",
-    "bbox": [
-      654,
-      2872,
-      854,
-      2911
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Dr.",
-    "bbox": [
-      872,
-      2872,
-      919,
-      2902
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Lisa",
-    "bbox": [
-      937,
-      2872,
-      1008,
-      2903
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Chen,",
-    "bbox": [
-      1024,
-      2872,
-      1130,
-      2908
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Billing",
-    "bbox": [
-      1148,
-      2872,
-      1253,
-      2911
-    ],
-    "label": "O"
-  },
-  {
-    "text": "No.:",
-    "bbox": [
-      1270,
-      2872,
-      1340,
-      2903
-    ],
-    "label": "O"
-  },
-  {
-    "text": "09876,",
-    "bbox": [
-      1357,
-      2872,
-      1479,
-      2908
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Address:",
-    "bbox": [
-      1494,
-      2872,
-      1655,
-      2903
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Women's",
-    "bbox": [
-      1671,
-      2872,
-      1840,
-      2903
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Health",
-    "bbox": [
-      1856,
-      2872,
-      1971,
-      2902
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Centre,",
-    "bbox": [
-      1987,
-      2872,
-      2118,
-      2908
-    ],
-    "label": "O"
-  },
-  {
-    "text": "4500",
-    "bbox": [
-      2135,
-      2872,
-      2224,
-      2903
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Oak",
-    "bbox": [
-      2240,
-      2872,
-      2313,
-      2903
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Street,",
-    "bbox": [
-      122,
-      2920,
-      239,
-      2956
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Vancouver,",
-    "bbox": [
-      254,
-      2920,
-      455,
-      2956
-    ],
-    "label": "O"
-  },
-  {
-    "text": "BC,",
-    "bbox": [
-      474,
-      2920,
-      536,
-      2956
-    ],
-    "label": "O"
-  },
-  {
-    "text": "V6H",
-    "bbox": [
-      552,
-      2920,
-      630,
-      2951
-    ],
-    "label": "O"
-  },
-  {
-    "text": "3N1,",
-    "bbox": [
-      646,
-      2920,
-      729,
-      2956
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Phone:",
-    "bbox": [
-      747,
-      2920,
-      872,
-      2951
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      890,
-      2920,
-      983,
-      2959
-    ],
-    "label": "O"
-  },
-  {
-    "text": "875-5678,",
-    "bbox": [
-      998,
-      2920,
-      1180,
-      2956
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Fax:",
-    "bbox": [
-      1198,
-      2920,
-      1273,
-      2950
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(604)",
-    "bbox": [
-      1291,
-      2920,
-      1383,
-      2959
-    ],
-    "label": "O"
-  },
-  {
-    "text": "875-5679",
-    "bbox": [
-      1399,
-      2920,
-      1571,
-      2951
-    ],
-    "label": "O"
-  },
-  {
-    "text": "(consulted",
-    "bbox": [
-      1587,
-      2920,
-      1773,
-      2959
-    ],
-    "label": "O"
-  },
-  {
-    "text": "for",
-    "bbox": [
-      1788,
-      2920,
-      1837,
-      2951
-    ],
-    "label": "O"
-  },
-  {
-    "text": "reproductive",
-    "bbox": [
-      1851,
-      2920,
-      2075,
-      2958
-    ],
-    "label": "O"
-  },
-  {
-    "text": "planning",
-    "bbox": [
-      2092,
-      2920,
-      2243,
-      2959
-    ],
-    "label": "O"
-  },
-  {
-    "text": "in",
-    "bbox": [
-      2261,
-      2920,
-      2287,
-      2950
-    ],
-    "label": "O"
-  },
-  {
-    "text": "2023).",
-    "bbox": [
-      2303,
-      2920,
-      2417,
-      2959
-    ],
-    "label": "O"
-  },
-  {
-    "text": "Please",
-    "bbox": [
-      690,
-      3056,
-      830,
-      3090
-    ],
-    "label": "O"
-  },
-  {
-    "text": "forward",
-    "bbox": [
-      845,
-      3056,
-      1009,
-      3090
-    ],
-    "label": "O"
-  },
-  {
-    "text": "all",
-    "bbox": [
-      1027,
-      3056,
-      1073,
-      3090
-    ],
-    "label": "O"
-  },
-  {
-    "text": "relevant",
-    "bbox": [
-      1092,
-      3056,
-      1264,
-      3090
-    ],
-    "label": "O"
-  },
-  {
-    "text": "consults,",
-    "bbox": [
-      1279,
-      3056,
-      1474,
-      3096
-    ],
-    "label": "O"
-  },
-  {
-    "text": "reports",
-    "bbox": [
-      1494,
-      3057,
-      1646,
-      3098
-    ],
-    "label": "O"
-  },
-  {
-    "text": "and",
-    "bbox": [
-      1663,
-      3056,
-      1740,
-      3090
-    ],
-    "label": "O"
-  },
-  {
-    "text": "tests",
-    "bbox": [
-      1757,
-      3057,
-      1860,
-      3090
-    ],
-    "label": "O"
-  },
-  {
-    "text": "REV",
-    "bbox": [
-      2265,
-      3138,
-      2323,
-      3159
-    ],
-    "label": "O"
-  },
-  {
-    "text": "SEP",
-    "bbox": [
-      2332,
-      3138,
-      2388,
-      3159
-    ],
-    "label": "O"
-  },
-  {
-    "text": "12",
-    "bbox": [
-      2401,
-      3138,
-      2428,
-      3159
+      598,
+      1101,
+      629,
+      1118
     ],
     "label": "O"
   }
