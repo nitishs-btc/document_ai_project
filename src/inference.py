@@ -63,6 +63,7 @@ def predict(image_path, words, boxes):
     word_ids = encoding.word_ids()
 
     predicted_boxes = []
+    debug_data = []
     seen_word_idx = set()
 
     for idx, word_idx in enumerate(word_ids):
@@ -81,5 +82,13 @@ def predict(image_path, words, boxes):
             "bbox": boxes[word_idx],
             "label": label
         })
+        debug_data.append({
+            "words": words[word_idx],
+            "bbox": boxes[word_idx],
+            "label": label
+        })
+    filename = os.path.basename(image_path).replace(".png", ".json")
 
+    with open(os.path.join(DEBUG_MODEL_DIR, filename), "w") as f:
+        json.dump(debug_data, f, indent=2)
     return predicted_boxes
