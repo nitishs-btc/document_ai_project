@@ -1,9 +1,97 @@
-def merge_words_linewise(words_data, labels):
+from collections import OrderedDict
+
+
+def _cy(bbox):
+    return (bbox[1] + bbox[3]) / 2
+
+
+def _is_same_line(a, b, threshold=12):
+    return abs(_cy(a) - _cy(b)) < threshold
+
+
+def _is_below(a, b):
+    return b[1] > a[3]
+
+
+def _h_dist(a, b):
+    return b[0] - a[2]
+
+
+def _v_dist(a, b):
+    return b[1] - a[3]
+
+
+# =========================
+# TEXT FILTER
+# =========================
+
+def _is_valid_text(text):
+    t = text.strip().lower()
+
+    if len(t) < 2:
+        return False
+
+    if t in ["|", "-", "—", ".", ","]:
+        return False
+
+    if not any(c.isalpha() for c in t):
+        return False
+
+    return True
+
+
+# =========================
+# CLEAN KEY (STRONG)
+# =========================
+
+def clean_key(text):
+    t = text.strip().lower()
+
+    bad_tokens = ["ph", "one", "im", "dp", "fa", "|"]
+
+    if t in bad_tokens:
+        return None
+
+    if len(t) < 3:
+        return None
+
+    # remove noisy patterns
+    if any(x in t for x in ["one", "lll", "|||"]):
+        return None
+
+    return text.strip()
+
+
+# =========================
+# STRICT SECTION DETECTION
+# =========================
+
+def is_section(text):
+    text = text.strip()
+
+    if not _is_valid_text(text):
+        return False
+
+    words = text.split()
+
+    # only ALL CAPS allowed
+    if text.isupper() and 2 <= len(words) <= 4:
+        return True
+
+    return False
+
+
+# =========================
+# MERGE WORDS
+# =========================
+
+def merge_words(words_data):
     merged = []
 
-    for w, label in zip(words_data, labels):
+    for w in words_data:
         text = w["text"]
         bbox = w["bbox"]
+        label = w.get("label", "O")
 
         if not merged:
             merged.append({"text": text, "bbox": bbox.copy(), "label": label})
@@ -11,180 +99,135 @@ def merge_words_linewise(words_data, labels):
 
         prev = merged[-1]
 
-        px0, py0, px1, py1 = prev["bbox"]
-        cx0, cy0, cx1, cy1 = bbox
-
-        same_line = abs((py0 + py1) / 2 - (cy0 + cy1) / 2) < 15
-
-        # 🔥 FIX: merge consecutive KEY tokens also
-        if same_line and (
-            label == prev["label"] or
-            (label == "B-KEY" and prev["label"] == "B-KEY")
+        if (
+            label == prev["label"]
+            and _is_same_line(prev["bbox"], bbox)
+            and 0 < (bbox[0] - prev["bbox"][2]) < 40
         ):
             prev["text"] += " " + text
-            prev["bbox"][2] = cx1
+            prev["bbox"][2] = bbox[2]
         else:
             merged.append({"text": text, "bbox": bbox.copy(), "label": label})
 
     return merged
 
 
-def _row_height(bbox):
-    return bbox[3] - bbox[1]
+# =========================
+# KV PAIRING
+# =========================
 
+def extract_key_value(merged):
+    from collections import OrderedDict
 
-def extract_key_value(words_data, labels):
+    result = OrderedDict()
 
-    merged = merge_words_linewise(words_data, labels)
+    i = 0
+    while i < len(merged):
+        item = merged[i]
 
-    result = {}
-    current_section = None
-
-    for i, item in enumerate(merged):
-
-        # =========================
-        # SECTION
-        # =========================
-        if item["label"] == "B-SECTION":
-            current_section = item["text"].strip()
-            if current_section not in result:
-                result[current_section] = {}
+        # Only process KEY labels
+        if item["label"] not in ["B-KEY", "I-KEY"]:
+            i += 1
             continue
 
-        if item["label"] != "B-KEY":
-            continue
+        key_text = item["text"].strip()
+        key_bbox = item["bbox"]
 
-        key = item
-        kx0, ky0, kx1, ky1 = key["bbox"]
-        kcx = (kx0 + kx1) / 2
-        kcy = (ky0 + ky1) / 2
-        k_height = max(_row_height(key["bbox"]), 12)
+        best_value = ""
 
-        best_value = None
+        # 🔥 LOCAL WINDOW SEARCH (VERY IMPORTANT)
+        for j in range(i + 1, min(i + 7, len(merged))):
+            nxt = merged[j]
 
-        # =====================================================
-        # 🚀 1. SAFE ROW MAPPING (STRICT VERSION)
-        # =====================================================
-        above_values = []
-        same_row_keys = []
+            # ❌ Stop if another key appears
+            if nxt["label"] in ["B-KEY", "I-KEY"]:
+                break
 
-        for itm in merged:
-            vx0, vy0, vx1, vy1 = itm["bbox"]
-            vcx = (vx0 + vx1) / 2
-            vcy = (vy0 + vy1) / 2
+            # Only consider VALUE labels
+            if nxt["label"] in ["B-VALUE", "I-VALUE"]:
+                val_bbox = nxt["bbox"]
 
-            if itm["label"] == "B-VALUE":
-                if 0 < (ky0 - vy1) < 100:
-                    above_values.append(itm)
+                # ✅ Ensure it's either same line or slightly below
+                cy_diff = abs((key_bbox[1] + key_bbox[3]) / 2 - (val_bbox[1] + val_bbox[3]) / 2)
 
-            if itm["label"] == "B-KEY":
-                if abs(vcy - kcy) < k_height:
-                    same_row_keys.append(itm)
-
-        # 🔥 apply ONLY if counts match (important fix)
-        if len(above_values) == len(same_row_keys) and len(above_values) >= 3:
-
-            above_values.sort(key=lambda x: x["bbox"][0])
-            same_row_keys.sort(key=lambda x: x["bbox"][0])
-
-            for idx, k in enumerate(same_row_keys):
-                val = above_values[idx]["text"]
-
-                if current_section:
-                    result[current_section][k["text"]] = val
-                else:
-                    result[k["text"]] = val
-
-            continue
-
-        # =====================================================
-        # 2. SAME ROW (RELAXED FIX)
-        # =====================================================
-        same_row = []
-
-        for val in merged:
-            if val["label"] != "B-VALUE":
-                continue
-
-            vx0, vy0, vx1, vy1 = val["bbox"]
-            vcy = (vy0 + vy1) / 2
-
-            if abs(vcy - kcy) < k_height:
-                dx = vx0 - kx1
-
-                if dx >= 0 and dx < 400:   # 🔥 relaxed
-                    same_row.append((dx, val))
-
-        if same_row:
-            same_row.sort(key=lambda x: x[0])
-            best_value = same_row[0][1]["text"]
-
-        # =====================================================
-        # 3. ABOVE (COLUMN OVERLAP FIX)
-        # =====================================================
-        if not best_value:
-
-            best_overlap = 0
-            best_val = None
-
-            for val in merged:
-                if val["label"] != "B-VALUE":
-                    continue
-
-                vx0, vy0, vx1, vy1 = val["bbox"]
-
-                # must be above
-                if not (0 < (ky0 - vy1) < 150):
-                    continue
-
-                # overlap instead of center distance
-                overlap = min(kx1, vx1) - max(kx0, vx0)
-
-                if overlap > best_overlap:
-                    best_overlap = overlap
-                    best_val = val["text"]
-
-            if best_val:
-                best_value = best_val
-
-        # =====================================================
-        # 4. BELOW (MULTI-LINE SAFE)
-        # =====================================================
-        if not best_value:
-            collected = []
-
-            for j in range(i + 1, len(merged)):
-                nxt = merged[j]
-
-                if nxt["label"] == "B-KEY":
+                if cy_diff < 25 or val_bbox[1] > key_bbox[3]:
+                    best_value = nxt["text"]
                     break
 
-                if nxt["label"] not in ["B-VALUE", "O"]:
-                    continue
-
-                vx0, vy0, vx1, vy1 = nxt["bbox"]
-
-                if vy0 <= ky1:
-                    continue
-
-                text = nxt["text"].strip()
-                if len(text) < 2:
-                    continue
-
-                collected.append((vy0, text))
-
-            if collected:
-                collected.sort(key=lambda x: x[0])
-                best_value = " ".join(v[1] for v in collected)
-
-        final_value = best_value.strip() if best_value else ""
-
-        # =========================
-        # STORE
-        # =========================
-        if current_section:
-            result[current_section][key["text"]] = final_value
-        else:
-            result[key["text"]] = final_value
+        result[key_text] = best_value
+        i += 1
 
     return result
+
+
+# =========================
+# STRUCTURED OUTPUT (FINAL)
+# =========================
+
+def extract_structured(words_data, labels=None):
+    from collections import OrderedDict
+
+    # attach labels
+    if labels:
+        for w, l in zip(words_data, labels):
+            w["label"] = l
+
+    merged = merge_words(words_data)
+    kv = extract_key_value(merged)
+
+    structured = OrderedDict()
+    current_section = None
+
+    for item in merged:
+        text = item["text"].strip()
+
+        # 🚫 skip long paragraphs
+        if len(text.split()) > 10:
+            continue
+
+        # SECTION DETECTION
+        if is_section(text):
+            current_section = text
+            structured[current_section] = OrderedDict()
+            continue
+
+        # KEY MAPPING
+        if text in kv:
+            key = clean_key(text)
+            if not key:
+                continue
+
+            if not current_section:
+                current_section = "GENERAL"
+                structured[current_section] = OrderedDict()
+
+            structured[current_section][key] = kv[text]
+
+    # ✅ REMOVE EMPTY SECTIONS
+    structured = OrderedDict(
+        (k, v) for k, v in structured.items() if v
+    )
+
+    # ✅ REMOVE DUPLICATE VALUES (IMPORTANT FIX FOR ADDRESS)
+    structured = remove_duplicate_values(structured)
+
+    return structured
+
+
+def remove_duplicate_values(structured):
+    seen_values = set()
+
+    for section in structured:
+        for key in list(structured[section].keys()):
+            value = structured[section][key]
+
+            if not value:
+                continue
+
+            # If same value already seen → remove duplicate
+            if value in seen_values:
+                structured[section][key] = ""
+            else:
+                seen_values.add(value)
+
+    return structured

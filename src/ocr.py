@@ -1,13 +1,17 @@
 import cv2
 import pytesseract
+import json
+import os
+
+DEBUG_OCR_DIR = "debug/ocr"
+os.makedirs(DEBUG_OCR_DIR, exist_ok=True)
 
 
 def run_ocr(image_path):
     img = cv2.imread(image_path)
-    h, w, _ = img.shape
 
-    # Better OCR config
-    custom_config = r'--oem 3 --psm 6'
+    # 🔥 BETTER CONFIG
+    custom_config = r'--oem 3 --psm 4'
 
     data = pytesseract.image_to_data(
         img,
@@ -16,6 +20,7 @@ def run_ocr(image_path):
     )
 
     words_data = []
+    debug_output = []
 
     for i in range(len(data['text'])):
         text = data['text'][i].strip()
@@ -23,19 +28,34 @@ def run_ocr(image_path):
         if text == "":
             continue
 
+        conf = int(data['conf'][i])
+
+        if conf < 40:  # 🔥 stricter filtering
+            continue
+
         x = data['left'][i]
         y = data['top'][i]
-        width = data['width'][i]
-        height = data['height'][i]
+        w = data['width'][i]
+        h = data['height'][i]
 
-        x0 = x
-        y0 = y
-        x1 = x + width
-        y1 = y + height
+        bbox = [x, y, x + w, y + h]
 
-        words_data.append({
+        word = {
             "text": text,
-            "bbox": [x0, y0, x1, y1]
+            "bbox": bbox
+        }
+
+        words_data.append(word)
+
+        debug_output.append({
+            "text": text,
+            "bbox": bbox,
+            "conf": conf
         })
+
+    filename = os.path.basename(image_path).replace(".png", ".json")
+
+    with open(os.path.join(DEBUG_OCR_DIR, filename), "w") as f:
+        json.dump(debug_output, f, indent=2)
 
     return words_data
