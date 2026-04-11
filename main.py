@@ -2,12 +2,15 @@ import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import sys
 import json
+from collections import OrderedDict
+from pathlib import Path
 
 from src.ocr import run_ocr
 from src.inference import predict
 from src.utils import extract_structured, sort_words
 from src.pdf_service import PDFService
-from src.checkbox import map_checkbox_to_text, classify_checkbox, detect_checkboxes
+from src.checkbox import map_checkbox_to_text, classify_checkbox, detect_checkboxes, group_checkbox_results
+from src.io_utils import group_image_paths, image_output_stem
 
 OUTPUT_FOLDER = "output"
 TEMP_IMAGE_FOLDER = "input"
@@ -68,12 +71,28 @@ def process_image(img_path):
     # CHECKBOX
     checkbox_boxes = detect_checkboxes(img_path, words_data)
     checkbox_states = classify_checkbox(img_path, checkbox_boxes)
-    checkbox_results = map_checkbox_to_text(checkbox_states, words_data)
+    checkbox_results = map_checkbox_to_text(checkbox_states, words_data, img_path=img_path)
 
     return {
         "form_data": structured_data,
-        "checkboxes": checkbox_results
+        "checkboxes": checkbox_results,
+        "checkbox_groups": group_checkbox_results(checkbox_results)
     }
+
+
+def process_image_group(image_paths):
+    if len(image_paths) == 1:
+        return process_image(image_paths[0])
+
+    pages = OrderedDict()
+
+    for image_path in image_paths:
+        result = process_image(image_path)
+
+        if result:
+            pages[Path(image_path).name] = result
+
+    return {"pages": pages}
 
 
 # ==========================
@@ -110,11 +129,11 @@ if os.path.isfile(input_path) and input_path.lower().endswith(IMAGE_EXT):
     result = process_image(input_path)
 
     if result:
-        name = os.path.basename(input_path).split(".")[0]
+        name = image_output_stem(input_path)
         output_path = os.path.join(OUTPUT_FOLDER, f"{name}.json")
 
         with open(output_path, "w") as f:
-            json.dump(result, f, indent=2)
+            json.dump(result, f, indent=2, ensure_ascii=False)
 
         print(f"✅ Saved: {output_path}")
 
@@ -124,24 +143,26 @@ elif os.path.isfile(input_path) and input_path.lower().endswith(PDF_EXT):
     output_path = os.path.join(OUTPUT_FOLDER, f"{pdf_name}.json")
 
     with open(output_path, "w") as f:
-        json.dump(pdf_result, f, indent=2)
+        json.dump(pdf_result, f, indent=2, ensure_ascii=False)
 
     print(f"✅ Saved: {output_path}")
 
 elif os.path.isdir(input_path):
     print(f"\n📂 Processing Folder: {input_path}")
 
-    for file_name in os.listdir(input_path):
-        full_path = os.path.join(input_path, file_name)
+    image_paths = [
+        os.path.join(input_path, file_name)
+        for file_name in os.listdir(input_path)
+        if file_name.lower().endswith(IMAGE_EXT)
+    ]
 
-        if full_path.lower().endswith(IMAGE_EXT):
-            result = process_image(full_path)
+    for document in group_image_paths(image_paths):
+        result = process_image_group(document["paths"])
 
-            if result:
-                name = file_name.split(".")[0]
-                output_path = os.path.join(OUTPUT_FOLDER, f"{name}.json")
+        if result:
+            output_path = os.path.join(OUTPUT_FOLDER, f"{document['name']}.json")
 
-                with open(output_path, "w") as f:
-                    json.dump(result, f, indent=2)
+            with open(output_path, "w") as f:
+                json.dump(result, f, indent=2, ensure_ascii=False)
 
-                print(f"✅ Saved: {output_path}")
+            print(f"✅ Saved: {output_path}")
