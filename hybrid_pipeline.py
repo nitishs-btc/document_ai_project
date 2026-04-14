@@ -25,7 +25,7 @@ def process_image(image_path):
 
     if not words_data:
         print("❌ OCR failed")
-        return None
+        return {"error": "OCR failed"}
 
     words = [w["text"] for w in words_data]
     boxes = [w["bbox"] for w in words_data]
@@ -37,7 +37,6 @@ def process_image(image_path):
     predictions = predict(image_path, words, boxes)
     print("✅ LayoutLM done:", len(predictions))
 
-    # Map labels back
     for w in words_data:
         w["label"] = "O"
 
@@ -50,7 +49,7 @@ def process_image(image_path):
     # -------------------------
     # STEP 3: Light Processing
     # -------------------------
-    tokens = prepare_tokens(words_data)[:30]
+    tokens = prepare_tokens(words_data)[:50]
 
     # -------------------------
     # STEP 4: Mistral
@@ -58,6 +57,11 @@ def process_image(image_path):
     print("👉 Calling Mistral...")
     structured_json = run_mistral(tokens)
     print("✅ Mistral done")
+
+    # 🔁 RETRY if failed
+    if isinstance(structured_json, dict) and structured_json.get("error"):
+        print("🔁 Retrying with smaller input...")
+        structured_json = run_mistral(tokens[:30])
 
     # -------------------------
     # STEP 5: Validation
@@ -75,9 +79,10 @@ def process_folder(input_folder):
             path = os.path.join(input_folder, file)
 
             result = process_image(path)
+
+            # ✅ store each file separately (fixed)
             results[file] = result
 
-    # Save output
     output_path = os.path.join(OUTPUT_DIR, "final_output.json")
 
     with open(output_path, "w") as f:
@@ -87,5 +92,4 @@ def process_folder(input_folder):
 
 
 if __name__ == "__main__":
-    input_folder = "input"
-    process_folder(input_folder)
+    process_folder("input")

@@ -1,8 +1,30 @@
 import requests
 import json
+import re
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "mistral"
+
+
+def clean_llm_output(text):
+    if not text:
+        return text
+
+    # remove ```json blocks
+    text = re.sub(r"```json", "", text)
+    text = re.sub(r"```", "", text)
+
+    # trim
+    text = text.strip()
+
+    # try to extract JSON part only
+    start = text.find("{")
+    end = text.rfind("}")
+
+    if start != -1 and end != -1:
+        text = text[start:end + 1]
+
+    return text
 
 
 def run_mistral(tokens, draft_json=None):
@@ -11,30 +33,18 @@ def run_mistral(tokens, draft_json=None):
         draft_json = {}
 
     prompt = f"""
-You are a document parser.
+Convert the following tokens into valid JSON.
 
-INPUT:
-1. OCR tokens with labels:
+Rules:
+- Output MUST be valid JSON
+- Do NOT use ```json
+- Do NOT explain
+- Do NOT truncate
+
+DATA:
 {json.dumps(tokens)}
 
-2. Draft JSON (may be empty or incorrect):
-{json.dumps(draft_json)}
-
-TASK:
-- Create clean structured JSON
-- Fix key-value pairing
-- Merge multi-line values
-- Remove duplicate keys
-- Ignore noise (like random text)
-- Handle checkboxes if present
-
-STRICT RULES:
-- Do NOT hallucinate
-- Use only given data
-- Output MUST be valid JSON
-- No explanation
-
-OUTPUT:
+Return only JSON.
 """
 
     response = requests.post(
@@ -45,14 +55,17 @@ OUTPUT:
             "stream": False,
             "options": {
                 "temperature": 0,
-                "num_predict": 60
+                "num_predict": 120
             }
         }
     )
 
+    result = response.json()["response"]
+    cleaned = clean_llm_output(result)
+
     try:
-        result = response.json()["response"]
-        return json.loads(result)
-    except Exception as e:
-        print("⚠️ LLM JSON parse failed:", e)
-        return {"error": "Invalid JSON", "raw": result}
+        return json.loads(cleaned)
+    except Exception:
+        print("\n⚠️ JSON parse failed. Raw output:\n")
+        print(cleaned[:500])
+        return {"error": "Invalid JSON", "raw": cleaned}
